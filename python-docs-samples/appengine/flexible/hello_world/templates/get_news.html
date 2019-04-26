@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Agenda App</title>
+	</head>
+	<body>
+		<h1>Agenda de eventos de tecnología</h1>
+		<h1>Última actualización: {{ hora_actual }} </h1>
+		{% for item in eventos %}
+			<table>
+					<tr>
+						<th>Nombre del grupo</th>
+						<td>{{ item.nombre_grupo }}</td>
+					</tr>
+					<tr>
+						<th>URL del grupo</th>
+						<td><a href="{{ item.link_grupo }}" target="_blank">Ir al grupo</a></td>
+					</tr>
+					<tr>
+						<th>Nombre del evento</th>
+						<td>{{ item.nombre_evento }}</td>
+					</tr>
+					<tr>
+						<th>URL del evento</th>
+						<td><a href="{{ item.link_evento }}" target="_blank"></a>Ir al evento</td>
+					</tr>
+					<tr>
+						<th>Día del evento</th>
+						<td>{{ item.fecha_string }}</td>
+					</tr>
+					<tr>
+						<th>Hora de inicio</th>
+						<td>{{ item.hora_inicio }}</td>
+					</tr>
+					<tr>
+						<th>Hora de fin</th>
+						<td>{{ item.hora_fin }}</td>
+					</tr>
+					<tr>
+						<th>Ubicación</th>
+						<td>{{ item.ubicacion }}</td>
+					</tr>
+					<tr>
+						<th>Dirección</th>
+						<td>{{ item.direccion }}</td>
+					</tr>
+			</table>
+			<hr>
+			<hr>
+		{% endfor %}
+	</body>
+</html>
