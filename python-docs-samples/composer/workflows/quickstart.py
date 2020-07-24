@@ -78,11 +78,11 @@ with models.DAG(
         cluster_name='quickstart-cluster-{{ ds_nodash }}',
         num_workers=2,
         zone=models.Variable.get('gce_zone'),
-        master_machine_type='n1-standard-1',
+        main_machine_type='n1-standard-1',
         worker_machine_type='n1-standard-1')
 
     # Run the Hadoop wordcount example installed on the Cloud Dataproc cluster
-    # master node.
+    # main node.
     run_dataproc_hadoop = dataproc_operator.DataProcHadoopOperator(
         task_id='run_dataproc_hadoop',
         main_jar=WORDCOUNT_JAR,
