@@ -77,7 +77,7 @@ def create_cluster(dataproc, project, zone, region, cluster_name):
             'gceClusterConfig': {
                 'zoneUri': zone_uri
             },
-            'masterConfig': {
+            'mainConfig': {
                 'numInstances': 1,
                 'machineTypeUri': 'n1-standard-1'
             },
